@@ -6,47 +6,66 @@
         <h1 class="h2">Input New Data</h1>
     </div>
 
-    <div class="contact-form col-lg-4">
-        <form action="/dashboard/pembeli" method="POST" class="mb-5">
+    <div class="col-lg-8">
+        <form action="/dashboard/mobil" method="POST" class="mb-5" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
-              <label for="ktp_pembeli" class="form-label">KTP Pembeli</label>
-              <input type="text" class="form-control @error('ktp_pembeli') is-invalid @enderror" id="ktp_pembeli" name="ktp_pembeli" required autofocus value="{{ old('ktp_pembeli') }}">
-              @error('ktp_pembeli')
+              <label for="kode_mobil" class="form-label">Kode Mobil</label>
+              <input type="text" class="form-control @error('kode_mobil') is-invalid @enderror" id="kode_mobil" name="kode_mobil" required autofocus value="{{ old('kode_mobil') }}">
+              @error('kode_mobil')
                   <div class="invalid-feedback">
                       {{ $message }}
                   </div>
               @enderror
             </div>
             <div class="mb-3">
-              <label for="nama_pembeli" class="form-label">Nama Pembeli</label>
-              <input type="text" class="form-control @error('nama_pembeli') is-invalid @enderror" id="nama_pembeli" name="nama_pembeli" required value="{{ old('nama_pembeli') }}">
-              @error('nama_pembeli')
+              <label for="merek_mobil" class="form-label">Merek Mobil</label>
+              <input type="text" class="form-control @error('merek_mobil') is-invalid @enderror" id="merek_mobil" name="merek_mobil" required value="{{ old('merek_mobil') }}">
+              @error('merek_mobil')
                   <div class="invalid-feedback">
                       {{ $message }}
                   </div>
               @enderror
             </div>
             <div class="mb-3">
-              <label for="alamat_pembeli" class="form-label">Alamat Pembeli</label>
-              <input type="text" class="form-control @error('alamat_pembeli') is-invalid @enderror" id="alamat_pembeli" name="alamat_pembeli" required value="{{ old('alamat_pembeli') }}">
-              @error('alamat_pembeli')
+              <label for="tipe_mobil" class="form-label">Tipe Mobil</label>
+              <input type="text" class="form-control @error('tipe_mobil') is-invalid @enderror" id="tipe_mobil" name="tipe_mobil" required value="{{ old('tipe_mobil') }}">
+              @error('tipe_mobil')
                   <div class="invalid-feedback">
                       {{ $message }}
                   </div>
               @enderror
             </div>
             <div class="mb-3">
-              <label for="telp_pembeli" class="form-label">No Telepon Pembeli</label>
-              <input type="text" class="form-control @error('telp_pembeli') is-invalid @enderror" id="telp_pembeli" name="telp_pembeli" required value="{{ old('telp_pembeli') }}">
-              @error('telp_pembeli')
+              <label for="warna_mobil" class="form-label">Warna Mobil</label>
+              <input type="text" class="form-control @error('warna_mobil') is-invalid @enderror" id="warna_mobil" name="warna_mobil" required value="{{ old('warna_mobil') }}">
+              @error('warna_mobil')
                   <div class="invalid-feedback">
                       {{ $message }}
                   </div>
               @enderror
             </div>
-            <button type="submit" class="btn btn-dark btn-outline-primary border-0">Add Data</button>
+            <div class="mb-3">
+              <label for="harga_mobil" class="form-label">Harga Mobil</label>
+              <input type="text" class="form-control @error('harga_mobil') is-invalid @enderror" id="harga_mobil" name="harga_mobil" required value="{{ old('harga_mobil') }}">
+              @error('harga_mobil')
+                  <div class="invalid-feedback">
+                      {{ $message }}
+                  </div>
+              @enderror
+            </div>
+            <div class="mb-3">
+                <label for="gambar_mobil" class="form-label">Post Image</label>
+                <input class="form-control @error('image') is-invalid @enderror" type="file" id="gambar_mobil" name="gambar_mobil">
+                @error('gambar_mobil')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
+            </div>
+            <button type="submit" class="btn btn-dark btn-outline-primary border-0">Create Post</button>
           </form>
     </div>
+
 
 @endsection
